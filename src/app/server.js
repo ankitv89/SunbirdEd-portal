@@ -58,7 +58,7 @@ app.all([
     secret: '717b3357-b2b1-4e39-9090-1c712d1b8b64',
     resave: false,
     cookie: {
-      maxAge: envHelper.sunbird_session_ttl 
+      maxAge: envHelper.sunbird_session_ttl
     },
     saveUninitialized: false,
     store: memoryStore
@@ -171,7 +171,7 @@ if (!process.env.sunbird_environment || !process.env.sunbird_instance) {
   logger.error({
     msg: `please set environment variable sunbird_environment,sunbird_instance
   start service Eg: sunbird_environment = dev, sunbird_instance = sunbird`})
-  process.exit(1)
+  // process.exit(1)
 }
 function runApp() {
 
@@ -236,7 +236,7 @@ function handleShutDowns() {
     timeout: 60 * 1000, // forcefully shutdown if not closed gracefully after 1 min
     onShutdown: cleanup,
     finally: () => logger.info({ msg: 'Server gracefully shut down.'}),
-    development: process.env.sunbird_environment === 'local' ? true : false, // in dev mode skip graceful shutdown 
+    development: process.env.sunbird_environment === 'local' ? true : false, // in dev mode skip graceful shutdown
   });
 }
 

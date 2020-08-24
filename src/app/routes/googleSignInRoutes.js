@@ -8,11 +8,11 @@ const GOOGLE_SIGN_IN_DELAY = 3000;
 const uuid = require('uuid/v1')
 const REQUIRED_STATE_FIELD = ['client_id', 'redirect_uri', 'error_callback', 'scope', 'state', 'response_type', 'version', 'merge_account_process'];
 /**
- * keycloack adds this string to track auth redirection and 
+ * keycloack adds this string to track auth redirection and
  * with this it triggers auth code verification to get token and create session
  * google flow this is not required
  */
-const KEYCLOACK_AUTH_CALLBACK_STRING = 'auth_callback=1'; 
+const KEYCLOACK_AUTH_CALLBACK_STRING = 'auth/fusionauth-oidc/callback';
 
 module.exports = (app) => {
 
